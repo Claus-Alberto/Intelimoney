@@ -1,0 +1,17 @@
+/* VARIABLES */
+@import "/style/variables.css";
+
+/* CSS RESET */
+@import "/style/css_reset.css";
+
+/* HEADER */
+@import "/style/index/header.css";
+
+/* MAIN */
+
+.main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+}
