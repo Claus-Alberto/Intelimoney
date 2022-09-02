@@ -1,0 +1,37 @@
+.servicos{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.servicos_container{
+    max-width: var(--container_width);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 40px;
+    padding: 40px 0;
+}
+
+.servicos_container_item{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+}
+
+.servicos_container_item img{
+    width: 280px;
+    height: 280px;
+}
+
+.servicos_container_item_text:nth-child(odd){
+    text-align: start;
+}
+
+.servicos_container_item_text:nth-child(even){
+    text-align: end;
+}

@@ -1,0 +1,26 @@
+/* VARIABLES */
+@import "/style/variables.css";
+
+/* FONTS */
+@import "/style/fonts.css";
+
+/* CSS RESET */
+@import "/style/css_reset.css";
+
+/* GENERAL */
+@import "/style/general.css";
+
+/* HEADER */
+@import "/style/index/header.css";
+
+/* MAIN */
+@import "/style/index/main.css";
+
+/* SERVICOS */
+@import "/style/index/servicos.css";
+
+/* EQUIPE */
+@import "/style/index/equipe.css";
+
+/* SLOGAN */
+@import "/style/index/slogan.css";
