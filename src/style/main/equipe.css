@@ -1,0 +1,76 @@
+.equipe{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    color: var(--white);
+    padding: 40px 0;
+}
+
+.equipe_container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: var(--container_width);
+    gap: 20px;
+}
+
+.equipe_container_carrossel{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.equipe_container_carrossel button{
+    all: unset;
+    cursor: pointer;
+}
+
+.equipe_container_carrossel button img{
+    width: 75px;
+}
+
+.equipe_container_carrossel_content{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 40px;
+}
+
+.equipe_container_carrossel_content img{
+    width: 280px;
+    height: 280px;
+}
+
+.equipe_container_carrossel_content_text{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.equipe_container_carrossel_content_text p:first-child{
+    text-transform: uppercase;
+}
+
+.equipe_container_carrossel_controller{
+    display: flex;
+    gap: 5px;
+}
+
+.equipe_container_carrossel_controller_item{
+    width: 15px;
+    height: 15px;
+    border: 1px solid var(--white);
+    border-radius: 10px;
+}
+
+.equipe_container_carrossel_controller_item:hover{
+    background-color: var(--white);
+    cursor: pointer;
+}
+
+.equipe_container_carrossel_controller .active{
+    background-color: var(--white);
+}
