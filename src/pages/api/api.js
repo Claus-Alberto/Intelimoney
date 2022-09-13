@@ -1,7 +1,4 @@
-import React from "react";
-
-async function getCurrencie(currencie) {
-
+const Currencies = async (currencie) => {
     let headersList = {
         "Accept": "*/*",
         "User-Agent": "Thunder Client (https://www.thunderclient.com)"
@@ -15,6 +12,8 @@ async function getCurrencie(currencie) {
     let data = await response.text();
     var json = JSON.parse(data);
     var moeda = json.results.currencies;
-    
-    return moeda;
-}
+
+    return moeda; 
+};
+
+export default Currencies;
