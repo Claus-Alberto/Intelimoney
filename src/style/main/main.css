@@ -24,7 +24,7 @@
 .main_container p{
     margin: 0 0 70px 0;
     font-size: 2rem;
-    color: var(--dark_gray);
+    color: var(--light_gray);
     font-family: 'Italiana', serif;
     max-width: 900px;
 }
