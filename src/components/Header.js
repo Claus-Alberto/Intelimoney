@@ -5,15 +5,15 @@ import "../style/main/header.css";
 
 const Header = () => {
   return (
-    <header>
+    <header id="header">
       <div className="header_container">
-        <a href="">Aposentadoria</a>
-        <a href="">Conversões</a>
+        <a href="retirement">Aposentadoria</a>
+        <a href="conversion">Conversões</a>
         <a className="header_container_logo" href="/">
           <img src={logomarca} alt="Intelimoney" />
         </a>
-        <a href="">Simulações</a>
-        <a href="">Investimentos</a>
+        <a href="simulation">Simulações</a>
+        <a href="investiments">Investimentos</a>
       </div>
     </header>
   );
