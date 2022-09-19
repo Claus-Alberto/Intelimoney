@@ -169,11 +169,11 @@ const Team = () => {
           </button>
         </div>
         <div className="equipe_container_carrossel_controller">
-            <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 1 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(1)}></div>
-            <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 2 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(2)}></div>
-            <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 3 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(3)}></div>
-            <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 4 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(4)}></div>
-          </div>
+          <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 1 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(1)}></div>
+          <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 2 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(2)}></div>
+          <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 3 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(3)}></div>
+          <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 4 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(4)}></div>
+        </div>
       </div>
     </section>
   );

@@ -8,21 +8,21 @@ import BarChart from '../../components/BarChart';
 const ConversionForm = () => {
 
         const [initialValue, setinitialValue] = useState(0.0);
-        const [convertedValue, setconvertedValue] = useState(0.0);
-        const [baseCoin, setbaseCoin] = useState('-');
-        const [destinyCoin, setdestinyCoin] = useState(0.0);
-        const [moeda , setMoeda] = useState([]);
+        const [convertedValue, setconvertedValue] = useState(0.00);
+        const [baseCoin, setbaseCoin] = useState('BRL');
+        const [destinyCoin, setdestinyCoin] = useState('BRL');
         const [userData, setUserData] = useState({
-            labels: UserData.map((data) => data.meses),
+            
+            labels: UserData.map((data) => data.mes),
             datasets: [
               {
                 label: "Gráfico meramente ilustrativo",
                 data: UserData.map((data) => data.capital),
                 backgroundColor: "#FFF",
-                borderColor: "black",
+                borderRadius: 9,
+                barPercentage: 0.5,
                 borderWidth: 1,
-                display: false,
-                tickWidth: 3
+                display: false,    
               },
             ],
           });
@@ -41,14 +41,14 @@ const ConversionForm = () => {
             let data = await response.text();
             var json = JSON.parse(data);
             var moeda = json.results.currencies;
-            
             return moeda;
+            
         };
         
         const conversionCalculate = (event) => {
             event.preventDefault();
 
-            /*var tipoMoedaBase, tipoMoedaSecundaria, valorMoedaBase, valorInversoMoedaSecundaria, valorInicial,
+            var tipoMoedaBase, tipoMoedaSecundaria, valorMoedaBase, valorInversoMoedaSecundaria, valorInicial,
              moedaBase, moedaSecundaria, resultado;
 
             tipoMoedaBase = baseCoin;
@@ -57,24 +57,28 @@ const ConversionForm = () => {
     
             
             getCoin(tipoMoedaBase).then(data => {
-                moedaBase = parseFloat(data.buy) // está iniciando vazio , só preenche qnd faço 2 chamadas
-                console.log(moedaBase)
+                console.log('Moeda base: ' + tipoMoedaBase)
+                if (tipoMoedaBase === 'BRL'){
+                    moedaBase = parseFloat(1);
+                }
+                else{
+                    moedaBase = parseFloat(data.buy);
+                }
+                getCoin(tipoMoedaSecundaria).then(teste => {
+                    if (tipoMoedaSecundaria === 'BRL'){
+                        moedaSecundaria = parseFloat(1);
+                    }
+                    else{
+                        moedaSecundaria = parseFloat(teste.buy); 
+                    }
+                    console.log(moedaSecundaria)
+                    valorMoedaBase = Number.parseFloat(Number.parseFloat(moedaBase));
+                    valorInversoMoedaSecundaria = 1 / (Number.parseFloat(moedaSecundaria));
+                    let valorConvertidoBase = valorMoedaBase * valorInversoMoedaSecundaria;
+                    resultado = valorConvertidoBase * valorInicial;
+                    setconvertedValue(Number.parseFloat(resultado).toFixed(2));
+                })
             })
-                console.log(moedaBase)
-    
-            getCoin(tipoMoedaSecundaria).then(data => {
-                moedaSecundaria = parseFloat(data.buy) // está iniciando vazio , só preenche qnd faço 2 chamadas
-                console.log(moedaSecundaria)
-            })
-                console.log(moedaSecundaria)
-            
-            valorMoedaBase = Number.parseFloat(Number.parseFloat(moedaBase));
-            valorInversoMoedaSecundaria = 1 / (Number.parseFloat(moedaSecundaria));
-            
-            let valorConvertidoBase = valorMoedaBase * valorInversoMoedaSecundaria;
-            resultado = valorConvertidoBase * valorInicial;
-
-            setconvertedValue(resultado.toFixed(4));*/
     
         }
         const changeHandler = (event, func) => {
@@ -102,7 +106,7 @@ const ConversionForm = () => {
                                     <option value='BTC'>BTC</option>
                                 </select>
                                 
-                                <input type="number" id="initialValue" value={initialValue} min="0.00" onChange={event => { changeHandler(event, setinitialValue)}} />
+                                <input type="number" step='0.01' id="initialValue" value={initialValue} min="0.00" onChange={event => { changeHandler(event, setinitialValue)}} />
                             </div>
                             <div className="conversion_questions_div">
                                 <label htmlFor="destinyCoin">Moeda de destino</label>
@@ -118,12 +122,12 @@ const ConversionForm = () => {
                                     <option value='CNY'>CNY</option>
                                     <option value='BTC'>BTC</option>
                                 </select>
-                                <input type="number" id="convertedValue" value={convertedValue} min="0.00" readonly="readonly" onChange={event => { changeHandler(event, setconvertedValue)}} />
+                                <input type="number" id="convertedValue" step="0.01" value={convertedValue} min="0.00" readOnly="readOnly" onChange={event => { changeHandler(event, setconvertedValue)}} />
                             </div>
                         </div>
                         <input type="submit" value="Converter!" />
                     </form>
-                    <div style={{ width: 600 }}>
+                    <div style={{ width: 600 }} className='conversion_result'>
                          <BarChart chartData={userData} />
                     </div>
                 </div>
@@ -135,4 +139,3 @@ const ConversionForm = () => {
 };
 
 export default ConversionForm;
-    

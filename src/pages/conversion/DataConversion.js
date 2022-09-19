@@ -1,27 +1,27 @@
 export const UserData =[
     {
         id: 1,
-        meses: 'Janeiro',
+        mes: 'Janeiro',
         capital: 10,
       },
       {
         id: 2,
-        meses: 'Fevereiro',
+        mes: 'Fevereiro',
         capital: 20,
       },
       {
         id: 3,
-        meses: 'Março',
+        mes: 'Março',
         capital: 30,
       },
       {
         id: 4,
-        meses: 'Abril',
+        mes: 'Abril',
         capital: 25,
       },
       {
         id: 5,
-        meses: 'Maio',
+        mes: 'Maio',
         capital: 27,
       },
 ];
