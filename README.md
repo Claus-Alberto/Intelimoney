@@ -2,6 +2,14 @@
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Use the commands:
+
+npx create-react-app intelimoney
+
+npm install history react-router-dom@6.0.0-beta.0
+
+npm install jquery --save
+
 ## Available Scripts
 
 In the project directory, you can run:
