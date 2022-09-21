@@ -13,7 +13,6 @@ const Investments = () => {
   window.onload =  () => {
     let heightToSub = $('#footer').outerHeight() + $('#header').outerHeight();
     $('.component').css('min-height', 'calc(100vh - ' + heightToSub.toFixed(0) + 'px)');
-    console.log('BATATA')
   }
 
   return (

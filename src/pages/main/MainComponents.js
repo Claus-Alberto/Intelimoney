@@ -22,7 +22,7 @@ const Initial = () => {
   return (
     <section className="main">
       <div className="main_container">
-        <img src={logomarca} alt="Intelimoney" />
+        <img src={logomarca} alt="Intellimoney" />
         <p>
           Uma plataforma para gerenciar seu dinheiro de forma rápida, fácil e
           inteligente!

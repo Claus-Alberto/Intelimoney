@@ -75,8 +75,6 @@ const InvestmentsPage = (props) => {
                 'dividendos' : 'N/A',
                 'tipo' : 'bolsa'
             };
-            
-            console.log(props)
         });
     }
 
@@ -107,8 +105,8 @@ const InvestmentsPage = (props) => {
                     </div>
                 </div>
                 <div className="active_values_info">
-                    <h3>{value}</h3>
-                    <p>{variation}%</p>
+                    <h3>{value[0]}{Number.parseFloat(value[1]).toFixed(2)}{value[2]}</h3>
+                    <p style={{color: (Number.parseFloat(variation) >= 0 ? '#00FF00' : variation==='N/A' ? '#696969' : '#FF0000')}}>{variation}{variation === 'N/A' ? '' : '%'}</p>
                 </div>
             </div>
         );

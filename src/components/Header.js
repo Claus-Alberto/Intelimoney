@@ -10,7 +10,7 @@ const Header = () => {
         <a href="retirement">Aposentadoria</a>
         <a href="conversion">Conversões</a>
         <a className="header_container_logo" href="/">
-          <img src={logomarca} alt="Intelimoney" />
+          <img src={logomarca} alt="Intellimoney" />
         </a>
         <a href="simulation">Simulações</a>
         <a href="investment">Investimentos</a>
