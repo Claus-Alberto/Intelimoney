@@ -9,7 +9,10 @@ import investsImage from "../../static/invests.svg";
 
 import left from "../../static/left_arrow.svg";
 import right from "../../static/right_arrow.svg";
-import profile from "../../static/profile1.svg";
+import profile1 from "../../static/claus.jpg";
+import profile2 from "../../static/leticia.jpg";
+import profile3 from "../../static/maria.jpg";
+import profile4 from "../../static/guilherme.jpg";
 
 import everywhere from "../../static/everywhere.svg";
 
@@ -105,7 +108,7 @@ const Team = () => {
             <img src={left} alt="Anterior" />
           </button>
           <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 1 ? 'flex' : 'none') }}>
-            <img src={profile} alt="Profile" />
+            <img className="team_profile_pic" src={profile1} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
                 Claus Alberto Bienemann
@@ -120,7 +123,7 @@ const Team = () => {
             </div>
           </div>
           <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 2 ? 'flex' : 'none') }}>
-            <img src={profile} alt="Profile" />
+            <img className="team_profile_pic" src={profile2} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
                 Letícia Ramos
@@ -136,7 +139,7 @@ const Team = () => {
             </div>
           </div>
           <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 3 ? 'flex' : 'none') }}>
-            <img src={profile} alt="Profile" />
+            <img className="team_profile_pic" src={profile3} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
                 Maria Luiza Machado
@@ -150,7 +153,7 @@ const Team = () => {
             </div>
           </div>
           <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 4 ? 'flex' : 'none') }}>
-            <img src={profile} alt="Profile" />
+            <img className="team_profile_pic" src={profile4} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
                 Guilherme Costa Santiago
