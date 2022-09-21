@@ -1,11 +1,10 @@
-.retirement{
+.conversion{
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.retirement_container{
+.conversion_container{
     border-radius: 25px;
     display: flex;
     flex-direction: column;
@@ -18,11 +17,11 @@
     font-family: 'Josefin Slab', serif;
 }
 
-.retirement_container h2{
+.conversion_container h2{
     color: var(--white);
 }
 
-.retirement_content{
+.conversion_content{
     display: flex;
     max-width: var(--container_width);
     gap: 20px;
@@ -30,7 +29,7 @@
     justify-content: center;
 }
 
-.retirement_content form{
+.conversion_content form{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -38,12 +37,12 @@
     gap: 20px;
 }
 
-.retirement_content form .retirement_questions{
+.conversion_content form .conversion_questions{
     display: flex;
     gap: 20px;
 }
 
-.retirement_content form input[type="submit"]{
+.conversion_content form input[type="submit"]{
     all: unset;
     background-color: var(--white);
     color: var(--black);
@@ -55,53 +54,56 @@
     cursor: pointer;
 }
 
-.retirement_content form input[type="submit"]:hover{
+.conversion_content form input[type="submit"]:hover{
     background-color: var(--transparent);
     color: var(--white);
 }
 
-.retirement_questions_div{
+.conversion_questions_div{
     display: flex;
     flex-direction: column;
     width: 100%;
     gap: 8px;
 }
 
-.retirement_questions_div label{
+.conversion_questions_div label{
     font-size: 1.3rem;
 }
 
-.retirement_questions_div input[type="number"]{
+.conversion_questions_div input[type="number"]{
     all: unset;
     background-color: var(--dark_gray);
     padding: 7px;
     border-radius: 4px;
 }
 
-.retirement_questions_div input[type=number]::-webkit-inner-spin-button,
-.retirement_questions_div input[type=number]::-webkit-outer-spin-button {
+.conversion_questions_div input[type=number]::-webkit-inner-spin-button,
+.conversion_questions_div input[type=number]::-webkit-outer-spin-button {
     -webkit-appearance: none;
 }
-
-.retirement_checkboxes{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 20px;
-}
-
-.retirement_checkboxes input[type=checkbox]{
-    transform: scale(2);
-}
-
-
-.retirement_checkboxes_item{
-    display: flex;
+.conversion_custom_select{
+    all: unset;
     flex-direction: column;
-    gap: 12px;
+    font-size: 1rem;
+    text-align: center;
+    background-color: var(--dark_gray);
+    padding: 7px;
+    border-radius: 4px;
+    color: var(--white);
+
+    background-image:
+    linear-gradient(45deg, transparent 40%, var(--white) 50%),
+    linear-gradient(135deg, var(--white) 50%, transparent 50%);
+    background-position:
+    calc(100% - 20px) calc(1em - 3px),
+    calc(100% - 11.5px) calc(1em - 3px);
+    background-size:
+    9px 9px,
+    9px 9px;
+    background-repeat: no-repeat;
 }
 
-.retirement_result{
+.conversion_result{
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -113,6 +115,6 @@
     gap: 10px;
 }
 
-.retirement_result p:nth-child(2), .retirement_result p:nth-child(4){
+.conversion_result p:nth-child(2), .conversion_result p:nth-child(4){
     font-size: 2.5rem;
 }

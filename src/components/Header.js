@@ -13,7 +13,7 @@ const Header = () => {
           <img src={logomarca} alt="Intelimoney" />
         </a>
         <a href="simulation">Simulações</a>
-        <a href="investiments">Investimentos</a>
+        <a href="investment">Investimentos</a>
       </div>
     </header>
   );

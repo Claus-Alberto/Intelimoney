@@ -4,7 +4,7 @@ const Currencies = async (currencie) => {
         "User-Agent": "Thunder Client (https://www.thunderclient.com)"
     }
 
-    let response = await fetch("https://api.hgbrasil.com/finance/quotations?format=json-cors&key=f107716c&fields=" + currencie, {
+    let response = await fetch("https://api.hgbrasil.com/finance/quotations?format=json-cors&key=3cca0ab5&fields=" + currencie, {
         method: "GET",
         headers: headersList
     });
@@ -22,7 +22,7 @@ const Bitcoin = async () => {
         "User-Agent": "Thunder Client (https://www.thunderclient.com)"
     }
 
-    let response = await fetch("https://api.hgbrasil.com/finance/quotations?format=json-cors&key=f107716c&fields=bitcoin", {
+    let response = await fetch("https://api.hgbrasil.com/finance/quotations?format=json-cors&key=3cca0ab5&fields=bitcoin", {
         method: "GET",
         headers: headersList
     });
@@ -40,7 +40,7 @@ const Stocks = async () => {
         "User-Agent": "Thunder Client (https://www.thunderclient.com)"
     }
 
-    let response = await fetch("https://api.hgbrasil.com/finance/quotations?format=json-cors&key=f107716c&fields=stocks", {
+    let response = await fetch("https://api.hgbrasil.com/finance/quotations?format=json-cors&key=3cca0ab5&fields=stocks", {
         method: "GET",
         headers: headersList
     });
@@ -58,7 +58,7 @@ const Taxes = async () => {
         "User-Agent": "Thunder Client (https://www.thunderclient.com)"
     }
 
-    let response = await fetch("https://api.hgbrasil.com/finance/taxes?format=json-cors&key=f107716c", {
+    let response = await fetch("https://api.hgbrasil.com/finance/taxes?format=json-cors&key=3cca0ab5", {
         method: "GET",
         headers: headersList
     });
@@ -70,4 +70,4 @@ const Taxes = async () => {
     return taxes;
 };
 
-export { Currencies, Bitcoin, Stocks, Taxes };
+export { Currencies, Bitcoin, Stocks, Taxes }; 

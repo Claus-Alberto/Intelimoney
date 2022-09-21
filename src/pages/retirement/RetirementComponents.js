@@ -4,11 +4,11 @@ import "../../style/retirement/retirement.css";
 
 const RetirementForm = () => {
 
-    const [retireSalary, setretireSalary] = useState(0.0);
-    const [currentAge, setcurrentAge] = useState(0.0);
-    const [interestRate, setinterestRate] = useState(0.0);
-    const [currentMoney, setcurrentMoney] = useState(0.0);
-    const [retireAge, setretireAge] = useState(0.0);
+    const [retireSalary, setretireSalary] = useState();
+    const [currentAge, setcurrentAge] = useState();
+    const [interestRate, setinterestRate] = useState();
+    const [currentMoney, setcurrentMoney] = useState();
+    const [retireAge, setretireAge] = useState();
     const [perMonth, setperMonth] = useState(1.0);
     const [perYear, setperYear] = useState(0.0);
     const [aport, setaport] = useState('N/A');
@@ -69,30 +69,30 @@ const RetirementForm = () => {
                     <div className="retirement_questions">
                         <div className="retirement_questions_div">
                             <label htmlFor="retireSalary">Salário de Aposentado</label>
-                            <input type="number" id="retireSalary" value={retireSalary} min="0.00" onChange={event => { changeHandler(event, setretireSalary)}} />
+                            <input tabindex="3" type="number" id="retireSalary" value={retireSalary} min="0.00" placeholder='R$0.000,00' step='.01' onChange={event => { changeHandler(event, setretireSalary)}} />
                             <label htmlFor="currentAge">Idade Atual</label>
-                            <input type="number" id="currentAge" value={currentAge} min="0.00" onChange={event => { changeHandler(event, setcurrentAge)}} />
+                            <input tabindex="5" type="number" id="currentAge" value={currentAge} min="0" step='1' placeholder='0' onChange={event => { changeHandler(event, setcurrentAge)}} />
                             <label htmlFor="interestRate">Taxa de Juros %</label>
-                            <input type="number" id="interestRate" value={interestRate} min="0.00" onChange={event => { changeHandler(event, setinterestRate)}} />
+                            <input tabindex="7" type="number" id="interestRate" placeholder='0.0000%' value={interestRate} step='.0001' onChange={event => { changeHandler(event, setinterestRate)}} />
                         </div>
                         <div className="retirement_questions_div">
                             <label htmlFor="currentMoney">Total Atual para Aposentadoria</label>
-                            <input type="number" id="currentMoney" value={currentMoney} min="0.00" onChange={event => { changeHandler(event, setcurrentMoney)}} />
+                            <input tabindex="4" type="number" id="currentMoney" value={currentMoney} placeholder='R$0.000,00' min="0.00" onChange={event => { changeHandler(event, setcurrentMoney)}} />
                             <label htmlFor="retireAge">Idade para se Aposentar</label>
-                            <input type="number" id="retireAge" value={retireAge} min="0.00" onChange={event => { changeHandler(event, setretireAge)}} />
+                            <input tabindex="6" type="number" id="retireAge" value={retireAge} min="0" placeholder='0' onChange={event => { changeHandler(event, setretireAge)}} />
                             <div className="retirement_checkboxes">
                                 <div className="retirement_checkboxes_item">
                                     <label htmlFor="perMonth">Por Mês</label>
-                                    <input type="checkbox" id="perMonth" checked={perMonth} onChange={event => { changeCheckBox(event, setperMonth, setperYear)}} />
+                                    <input tabindex="8" type="checkbox" id="perMonth" checked={perMonth} onChange={event => { changeCheckBox(event, setperMonth, setperYear)}} />
                                 </div>
                                 <div className="retirement_checkboxes_item">
                                     <label htmlFor="perYear">Por Ano</label>
-                                    <input type="checkbox" id="perYear" checked={perYear} onChange={event => { changeCheckBox(event, setperYear, setperMonth)}} />
+                                    <input tabindex="9" type="checkbox" id="perYear" checked={perYear} onChange={event => { changeCheckBox(event, setperYear, setperMonth)}} />
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <input type="submit" value="Calcular!" />
+                    <input tabindex="10" type="submit" value="Calcular!" />
                 </form>
                 <div className="retirement_result">
                     <p>Você precisa juntar</p>

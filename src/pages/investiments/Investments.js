@@ -1,9 +1,9 @@
 import React from "react";
 import $ from 'jquery';
 
-import RetirementForm from "./RetirementComponents";
+import InvestmentsPage from "./InvestmentsComponents";
 
-const Retirement = () => {
+const Investments = () => {
 
   window.onresize = () => {
     let heightToSub = $('#footer').outerHeight() + $('#header').outerHeight();
@@ -13,13 +13,14 @@ const Retirement = () => {
   window.onload =  () => {
     let heightToSub = $('#footer').outerHeight() + $('#header').outerHeight();
     $('.component').css('min-height', 'calc(100vh - ' + heightToSub.toFixed(0) + 'px)');
+    console.log('BATATA')
   }
 
   return (
-    <section className="retirement component">
-      <RetirementForm />
+    <section className="investment component">
+        <InvestmentsPage />
     </section>
   );
 }
 
-export default Retirement;
+export default Investments;

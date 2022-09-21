@@ -1,4 +1,11 @@
+html{
+    scroll-behavior: smooth;
+}
+
 header{
+    position: sticky; top: 0;
+    top: 0;
+    width: 100%;
     background-color: var(--black);
     display: flex;
     justify-content: center;
@@ -27,6 +34,16 @@ h3{
 
 p{
     font-size: var(--p);
+    font-family: 'Josefin Slab', serif;
+}
+
+label{
+    font-size: var(--p);
+    font-family: 'Josefin Slab', serif;
+}
+
+input[type='text']{
+    font-size: var(--input);
     font-family: 'Josefin Slab', serif;
 }
 

@@ -27,7 +27,7 @@ const Initial = () => {
           Uma plataforma para gerenciar seu dinheiro de forma rápida, fácil e
           inteligente!
         </p>
-        <a href="">Conheça nossos serviços</a>
+        <a href="#servicos">Conheça nossos serviços</a>
       </div>
     </section>
   );
@@ -35,7 +35,7 @@ const Initial = () => {
 
 const Services = () => {
   return (
-    <section className="servicos">
+    <section className="servicos" id="servicos">
       <div className="servicos_container">
         <h2>Nossos Serviços</h2>
         <div className="servicos_container_item">
@@ -101,17 +101,32 @@ const Team = () => {
       <div className="equipe_container">
         <h2>Nossa equipe</h2>
         <div className="equipe_container_carrossel">
-          <button onClick={() => currentMemberFunction(currentMemberValue > 1 ? currentMemberValue - 1 : currentMemberValue)}>
+          <button onClick={() => currentMemberFunction(currentMemberValue > 1 ? currentMemberValue - 1 : 4)}>
             <img src={left} alt="Anterior" />
           </button>
-          <div className="equipe_container_carrossel_content" style={{display : (currentMemberValue === 1 ? 'flex' : 'none')}}>
+          <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 1 ? 'flex' : 'none') }}>
             <img src={profile} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
-                Nome do membro 1
+                Claus Alberto Bienemann
               </p>
               <p className="equipe_container_carrossel_content_text_skill">
-                Especialidade
+                Full-Stack Developer
+              </p>
+              <p className="equipe_container_carrossel_content_text_description">
+                Desenvolvedor Full-Stack na empresa Intelithings, apaixonado
+                por tecnologia e entusiasta no mundo da computação.
+              </p>
+            </div>
+          </div>
+          <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 2 ? 'flex' : 'none') }}>
+            <img src={profile} alt="Profile" />
+            <div className="equipe_container_carrossel_content_text">
+              <p className="equipe_container_carrossel_content_text_member">
+                Letícia Ramos
+              </p>
+              <p className="equipe_container_carrossel_content_text_skill">
+                Data Base Analyst
               </p>
               <p className="equipe_container_carrossel_content_text_description">
                 It is a long established fact that a reader will be distracted
@@ -119,14 +134,14 @@ const Team = () => {
               </p>
             </div>
           </div>
-          <div className="equipe_container_carrossel_content" style={{display : (currentMemberValue === 2 ? 'flex' : 'none')}}>
+          <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 3 ? 'flex' : 'none') }}>
             <img src={profile} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
-                Nome do membro 2
+                Maria Luiza Machado
               </p>
               <p className="equipe_container_carrossel_content_text_skill">
-                Especialidade
+                Full-Stack Developer
               </p>
               <p className="equipe_container_carrossel_content_text_description">
                 It is a long established fact that a reader will be distracted
@@ -134,14 +149,14 @@ const Team = () => {
               </p>
             </div>
           </div>
-          <div className="equipe_container_carrossel_content" style={{display : (currentMemberValue === 3 ? 'flex' : 'none')}}>
+          <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 4 ? 'flex' : 'none') }}>
             <img src={profile} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
-                Nome do membro 3
+                Guilherme Costa Santiago
               </p>
               <p className="equipe_container_carrossel_content_text_skill">
-                Especialidade
+                SCRUM Master
               </p>
               <p className="equipe_container_carrossel_content_text_description">
                 It is a long established fact that a reader will be distracted
@@ -149,30 +164,15 @@ const Team = () => {
               </p>
             </div>
           </div>
-          <div className="equipe_container_carrossel_content" style={{display : (currentMemberValue === 4 ? 'flex' : 'none')}}>
-            <img src={profile} alt="Profile" />
-            <div className="equipe_container_carrossel_content_text">
-              <p className="equipe_container_carrossel_content_text_member">
-                Nome do membro 4
-              </p>
-              <p className="equipe_container_carrossel_content_text_skill">
-                Especialidade
-              </p>
-              <p className="equipe_container_carrossel_content_text_description">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
-              </p>
-            </div>
-          </div>
-          <button onClick={() => currentMemberFunction(currentMemberValue < 4 ? currentMemberValue + 1 : currentMemberValue)}>
+          <button onClick={() => currentMemberFunction(currentMemberValue < 4 ? currentMemberValue + 1 : 1)}>
             <img src={right} alt="Próximo" />
           </button>
         </div>
         <div className="equipe_container_carrossel_controller">
-          <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 1 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(1)}></div>
-          <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 2 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(2)}></div>
-          <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 3 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(3)}></div>
-          <div className="equipe_container_carrossel_controller_item" style={{backgroundColor : (currentMemberValue === 4 ? 'var(--white)' : '')}} onClick={() => currentMemberFunction(4)}></div>
+          <div className="equipe_container_carrossel_controller_item" style={{ backgroundColor: (currentMemberValue === 1 ? 'var(--white)' : '') }} onClick={() => currentMemberFunction(1)}></div>
+          <div className="equipe_container_carrossel_controller_item" style={{ backgroundColor: (currentMemberValue === 2 ? 'var(--white)' : '') }} onClick={() => currentMemberFunction(2)}></div>
+          <div className="equipe_container_carrossel_controller_item" style={{ backgroundColor: (currentMemberValue === 3 ? 'var(--white)' : '') }} onClick={() => currentMemberFunction(3)}></div>
+          <div className="equipe_container_carrossel_controller_item" style={{ backgroundColor: (currentMemberValue === 4 ? 'var(--white)' : '') }} onClick={() => currentMemberFunction(4)}></div>
         </div>
       </div>
     </section>

@@ -10,6 +10,10 @@ npm install history react-router-dom@6.0.0-beta.0
 
 npm install jquery --save
 
+npm install sweetalert2
+
+npm install react-chartjs-2
+
 ## Available Scripts
 
 In the project directory, you can run:
