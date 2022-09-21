@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a841824d.css",
+    "main.js": "/static/js/main.427a91fa.js",
+    "static/js/787.b224a437.chunk.js": "/static/js/787.b224a437.chunk.js",
+    "static/media/simulation.svg": "/static/media/simulation.14bd7babe8491c68237a75c65868e54c.svg",
+    "static/media/conversion.svg": "/static/media/conversion.e87fc9d817315741a16b23aece2f3e53.svg",
+    "static/media/profile1.svg": "/static/media/profile1.dc9973387a28817d9e2b195c96c8b4a9.svg",
+    "static/media/everywhere.svg": "/static/media/everywhere.4b21859d2c6ef592cbe1373dbde3ade6.svg",
+    "static/media/logomarca.svg": "/static/media/logomarca.fa508e89ffa065e26c023fccee8f24ed.svg",
+    "static/media/retirement.svg": "/static/media/retirement.03e050ad6c0bdd23e76a3c3225a0be12.svg",
+    "static/media/search.svg": "/static/media/search.9195c8c47cd3c412da13.svg",
+    "static/media/invests.svg": "/static/media/invests.811a99116cfd241e7339a1b40ca7552e.svg",
+    "static/media/left_arrow.svg": "/static/media/left_arrow.7b5334974bf67946c77696430a246653.svg",
+    "static/media/right_arrow.svg": "/static/media/right_arrow.72fa8fa7362651a262cae5417032b4d1.svg",
+    "static/media/background-img.svg": "/static/media/background-img.083018dd83aea07bf65f.svg",
+    "index.html": "/index.html",
+    "main.a841824d.css.map": "/static/css/main.a841824d.css.map",
+    "main.427a91fa.js.map": "/static/js/main.427a91fa.js.map",
+    "787.b224a437.chunk.js.map": "/static/js/787.b224a437.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a841824d.css",
+    "static/js/main.427a91fa.js"
+  ]
+}
