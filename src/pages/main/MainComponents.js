@@ -159,8 +159,8 @@ const Team = () => {
                 SCRUM Master
               </p>
               <p className="equipe_container_carrossel_content_text_description">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
+                Scrum Master e, nas horas vagas, dev na empresa IntelliThings. 
+                Organização e padrões são fundamentais para um bom desenvolvimento de software.
               </p>
             </div>
           </div>
