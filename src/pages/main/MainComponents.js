@@ -129,8 +129,9 @@ const Team = () => {
                 Data Base Analyst
               </p>
               <p className="equipe_container_carrossel_content_text_description">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
+                Responsável pela estruturação e manutenção do banco de dados, 
+                garantia da usabilidade de todos os dados, visualização e eficiência
+                das querys.
               </p>
             </div>
           </div>
