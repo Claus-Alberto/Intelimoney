@@ -145,8 +145,7 @@ const Team = () => {
                 Full-Stack Developer
               </p>
               <p className="equipe_container_carrossel_content_text_description">
-                It is a long established fact that a reader will be distracted
-                by the readable content of a page when looking at its layout.
+                Experiência em Java ,HTML e C#. Ênfase na parte de desenvlvimento Back-end com uso de arquitetura MVC.
               </p>
             </div>
           </div>
