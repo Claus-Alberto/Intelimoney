@@ -1,49 +1,61 @@
-
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import "../../style/conversion/conversion.css";
-import { UserData } from './DataConversion';
 import BarChart from '../../components/BarChart';
-
+import { Currencies } from "../api/api";
 
 const ConversionForm = () => {
-
-        const [initialValue, setinitialValue] = useState(0.0);
-        const [convertedValue, setconvertedValue] = useState(0.00);
+        
+        const [initialValue, setinitialValue] = useState('1.00');
+        const [convertedValue, setconvertedValue] = useState('1.00');
         const [baseCoin, setbaseCoin] = useState('BRL');
         const [destinyCoin, setdestinyCoin] = useState('BRL');
+        const [data, setData] = useState([{}])
+
+                useEffect(() => {
+                    fetch("/coinsHistory").then(
+                        res => res.json()
+                    ).then(
+                        data => { 
+                        if(destinyCoin === 'BRL')
+                        setData(data.BRL)
+                        else if (destinyCoin === 'USD')
+                        setData(data.USD)
+                    }
+                    )
+                }, [destinyCoin])
+
+
         const [userData, setUserData] = useState({
-            
-            labels: UserData.map((data) => data.mes),
-            datasets: [
-              {
-                label: "Gráfico meramente ilustrativo",
-                data: UserData.map((data) => data.capital),
+
+            labels: data.map(function(index){return index.mes}),
+            datasets: 
+            [{
+                label: "Capital " + destinyCoin,
+                data: data.map(function(index){return index.capital}),
                 backgroundColor: "#FFF",
                 borderRadius: 9,
                 barPercentage: 0.5,
                 borderWidth: 1,
                 display: false,    
-              },
-            ],
-          });
-    
-        async function getCoin(currencie){
-            let headersList = {
-                "Accept": "*/*",
-                "User-Agent": "Thunder Client (https://www.thunderclient.com)"
-            }
-        
-            let response = await fetch("https://api.hgbrasil.com/finance/quotations?format=json-cors&key=615303ae&fields=" + currencie, {
-                method: "GET",
-                headers: headersList
-            });
-        
-            let data = await response.text();
-            var json = JSON.parse(data);
-            var moeda = json.results.currencies;
-            return moeda;
-            
-        };
+            }]
+        });
+
+        useEffect(() => {
+            setUserData
+            ({
+                labels: data.map(function(index){return index.mes}),
+                datasets: 
+                [{
+                    label: "Capital " + destinyCoin,
+                    data: data.map(function(index){return index.capital}),
+                    backgroundColor: "#FFF",
+                    borderRadius: 9,
+                    barPercentage: 0.5,
+                    borderWidth: 1,
+                    display: false,    
+                }],
+            })
+        }, [destinyCoin])
         
         const conversionCalculate = (event) => {
             event.preventDefault();
@@ -56,22 +68,20 @@ const ConversionForm = () => {
             valorInicial = Number.parseFloat(initialValue.replace(",","."));
     
             
-            getCoin(tipoMoedaBase).then(data => {
-                console.log('Moeda base: ' + tipoMoedaBase)
+            Currencies(tipoMoedaBase).then(data => {
                 if (tipoMoedaBase === 'BRL'){
                     moedaBase = parseFloat(1);
                 }
                 else{
                     moedaBase = parseFloat(data.buy);
                 }
-                getCoin(tipoMoedaSecundaria).then(teste => {
+                Currencies(tipoMoedaSecundaria).then(teste => {
                     if (tipoMoedaSecundaria === 'BRL'){
                         moedaSecundaria = parseFloat(1);
                     }
                     else{
                         moedaSecundaria = parseFloat(teste.buy); 
                     }
-                    console.log(moedaSecundaria)
                     valorMoedaBase = Number.parseFloat(Number.parseFloat(moedaBase));
                     valorInversoMoedaSecundaria = 1 / (Number.parseFloat(moedaSecundaria));
                     let valorConvertidoBase = valorMoedaBase * valorInversoMoedaSecundaria;
@@ -106,7 +116,7 @@ const ConversionForm = () => {
                                     <option value='BTC'>BTC</option>
                                 </select>
                                 
-                                <input type="number" step='0.01' id="initialValue" value={initialValue} min="0.00" onChange={event => { changeHandler(event, setinitialValue)}} />
+                                <input type="number" step='0.01' id="initialValue" value={initialValue} min="0.01" onChange={event => { changeHandler(event, setinitialValue)}} />
                             </div>
                             <div className="conversion_questions_div">
                                 <label htmlFor="destinyCoin">Moeda de destino</label>
@@ -133,9 +143,6 @@ const ConversionForm = () => {
                 </div>
             </div>
     );
-
-            
-        
 };
 
 export default ConversionForm;
