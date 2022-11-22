@@ -6,6 +6,19 @@ import os
 path = os.getcwd() + '/src/pages/api/ArquivosBanco/'
 
 
+#VERIFICA SE A TABELA EXISTE, SENAO EXISTIR INSERE NO BANCO
+#RECEBE O NOME DA TABELA E CHAVE DA API
+def manage_db(table_name, currentKey):
+    if check_if_table_exist(table_name):
+        return
+    
+    if table_name == 'TITLES':
+        insert_titles()
+    elif table_name == 'EXPECTATIVA_VIDA':
+        insert_life_expectancy()
+    else:
+        check_currencie(currentKey)
+
 #INSERE O JSON COM AS EXPECTATIVAS DE VIDA NO BANCO
 def insert_life_expectancy():
     table_name = 'EXPECTATIVA_VIDA'
