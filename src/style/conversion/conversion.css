@@ -1,0 +1,120 @@
+.conversion{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.conversion_container{
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    padding: 20px;
+    color: var(--white);
+    gap: 20px;
+    font-family: 'Josefin Slab', serif;
+}
+
+.conversion_container h2{
+    color: var(--white);
+}
+
+.conversion_content{
+    display: flex;
+    max-width: var(--container_width);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.conversion_content form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 60%;
+    gap: 20px;
+}
+
+.conversion_content form .conversion_questions{
+    display: flex;
+    gap: 20px;
+}
+
+.conversion_content form input[type="submit"]{
+    all: unset;
+    background-color: var(--white);
+    color: var(--black);
+    text-align: center;
+    padding: 8px;
+    border-radius: 60px;
+    font-size: 1.7rem;
+    border: 2px solid var(--white);
+    cursor: pointer;
+}
+
+.conversion_content form input[type="submit"]:hover{
+    background-color: var(--transparent);
+    color: var(--white);
+}
+
+.conversion_questions_div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.conversion_questions_div label{
+    font-size: 1.3rem;
+}
+
+.conversion_questions_div input[type="number"]{
+    all: unset;
+    background-color: var(--dark_gray);
+    padding: 7px;
+    border-radius: 4px;
+}
+
+.conversion_questions_div input[type=number]::-webkit-inner-spin-button,
+.conversion_questions_div input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+.conversion_custom_select{
+    all: unset;
+    flex-direction: column;
+    font-size: 1rem;
+    text-align: left;
+    background-color: var(--dark_gray);
+    padding: 7px;
+    border-radius: 4px;
+    color: var(--white);
+
+    background-image:
+    linear-gradient(45deg, transparent 40%, var(--white) 50%),
+    linear-gradient(135deg, var(--white) 50%, transparent 50%);
+    background-position:
+    calc(100% - 20px) calc(1em - 3px),
+    calc(100% - 11.5px) calc(1em - 3px);
+    background-size:
+    9px 9px,
+    9px 9px;
+    background-repeat: no-repeat;
+}
+
+.conversion_result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--dark_gray);
+    padding: 15px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.conversion_result p:nth-child(2), .conversion_result p:nth-child(4){
+    font-size: 2.5rem;
+}

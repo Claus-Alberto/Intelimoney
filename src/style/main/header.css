@@ -1,0 +1,26 @@
+.header_container{
+    max-width: var(--container_width);
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header_container a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.3rem;
+    font-family: 'Italiana', serif;
+    text-decoration: none;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+
+.header_container .header_container_logo{
+    font-size: 2.3rem;
+}
+
+.header_container .header_container_logo img{
+    max-height: 45px;
+}
