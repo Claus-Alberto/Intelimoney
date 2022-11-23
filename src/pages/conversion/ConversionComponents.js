@@ -56,7 +56,6 @@ const ConversionForm = () => {
     
             
             getCoin(tipoMoedaBase).then(data => {
-                console.log('Moeda base: ' + tipoMoedaBase)
                 if (tipoMoedaBase === 'BRL'){
                     moedaBase = parseFloat(1);
                 }
@@ -70,7 +69,6 @@ const ConversionForm = () => {
                     else{
                         moedaSecundaria = parseFloat(teste.buy); 
                     }
-                    console.log(moedaSecundaria)
                     valorMoedaBase = Number.parseFloat(Number.parseFloat(moedaBase));
                     valorInversoMoedaSecundaria = 1 / (Number.parseFloat(moedaSecundaria));
                     let valorConvertidoBase = valorMoedaBase * valorInversoMoedaSecundaria;

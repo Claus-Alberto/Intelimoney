@@ -5,6 +5,7 @@ import Main from "./pages/main/Main";
 import Retirement from "./pages/retirement/Retirement";
 import Conversion from "./pages/conversion/Conversion";
 import Investments from "./pages/investiments/Investments";
+import Simulation from "./pages/simulation/Simulation";
 
 
 const  App = () => {
@@ -12,9 +13,10 @@ const  App = () => {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Main />} />
-        <Route path="retirement" element={<Retirement />} />
-        <Route path="conversion" element={<Conversion />} />
-        <Route path="investment" element={<Investments />} />
+        <Route path="/retirement" element={<Retirement />} />
+        <Route path="/conversion" element={<Conversion />} />
+        <Route path="/investment" element={<Investments />} />
+        <Route path="/simulation" element={<Simulation />} />
       </Routes>
     </BrowserRouter>
   );

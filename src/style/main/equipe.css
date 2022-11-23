@@ -74,7 +74,3 @@
 .equipe_container_carrossel_controller .active{
     background-color: var(--white);
 }
-
-.team_profile_pic{
-    border-radius: 500px;
-}

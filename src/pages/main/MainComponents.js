@@ -9,10 +9,7 @@ import investsImage from "../../static/invests.svg";
 
 import left from "../../static/left_arrow.svg";
 import right from "../../static/right_arrow.svg";
-import profile1 from "../../static/claus.jpg";
-import profile2 from "../../static/leticia.jpg";
-import profile3 from "../../static/maria.jpg";
-import profile4 from "../../static/guilherme.jpg";
+import profile from "../../static/profile1.svg";
 
 import everywhere from "../../static/everywhere.svg";
 
@@ -108,7 +105,7 @@ const Team = () => {
             <img src={left} alt="Anterior" />
           </button>
           <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 1 ? 'flex' : 'none') }}>
-            <img className="team_profile_pic" src={profile1} alt="Profile" />
+            <img src={profile} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
                 Claus Alberto Bienemann
@@ -123,7 +120,7 @@ const Team = () => {
             </div>
           </div>
           <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 2 ? 'flex' : 'none') }}>
-            <img className="team_profile_pic" src={profile2} alt="Profile" />
+            <img src={profile} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
                 Letícia Ramos
@@ -132,14 +129,13 @@ const Team = () => {
                 Data Base Analyst
               </p>
               <p className="equipe_container_carrossel_content_text_description">
-                Responsável pela estruturação e manutenção do banco de dados, 
-                garantia da usabilidade de todos os dados, visualização e eficiência
-                das querys.
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
               </p>
             </div>
           </div>
           <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 3 ? 'flex' : 'none') }}>
-            <img className="team_profile_pic" src={profile3} alt="Profile" />
+            <img src={profile} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
                 Maria Luiza Machado
@@ -148,12 +144,13 @@ const Team = () => {
                 Full-Stack Developer
               </p>
               <p className="equipe_container_carrossel_content_text_description">
-                Experiência em Java ,HTML e C#. Ênfase na parte de desenvlvimento Back-end com uso de arquitetura MVC.
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
               </p>
             </div>
           </div>
           <div className="equipe_container_carrossel_content" style={{ display: (currentMemberValue === 4 ? 'flex' : 'none') }}>
-            <img className="team_profile_pic" src={profile4} alt="Profile" />
+            <img src={profile} alt="Profile" />
             <div className="equipe_container_carrossel_content_text">
               <p className="equipe_container_carrossel_content_text_member">
                 Guilherme Costa Santiago
@@ -162,8 +159,8 @@ const Team = () => {
                 SCRUM Master
               </p>
               <p className="equipe_container_carrossel_content_text_description">
-                Scrum Master e, nas horas vagas, dev na empresa IntelliThings. 
-                Organização e padrões são fundamentais para um bom desenvolvimento de software.
+                It is a long established fact that a reader will be distracted
+                by the readable content of a page when looking at its layout.
               </p>
             </div>
           </div>
