@@ -18,13 +18,12 @@ def get_request(field):
     
     #Le Json e transforme em um dataframe
     data = pd.read_json(reqUrl)
+    
     try:
         df = pd.json_normalize(data[field])
     except:
-        df = pd.json_normalize(data)
+        return data
     
-    print(df)
-
     
     if field == 'currencies':
         #VERIFICA A TABELA DE MOEDAS
@@ -56,11 +55,11 @@ def list_to_df(list, table_name):
         col = ['nome', 'simbolo']
     elif table_name == 'EXPECTATIVA_VIDA':
         col = ['country', 'expectancy']
-    else:
+    else: #HISTORICAL_CURRENCIES
         col = ['name', 'first', 'last', 'max', 'min', 'avg', 'data']
     
     df = pd.DataFrame(list, columns=col)
     return df
 
 
-print(get_request('taxes'))
+print(get_table('TITLES', 'simbolo', 'WSON33'))

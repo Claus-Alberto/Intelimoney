@@ -88,11 +88,7 @@ def select_condition_table(table_name, field, parameter, return_bool=False):
     conn = sqlite3.connect('teste.db')
     cur = conn.cursor()
     
-    if table_name == 'TITLES':
-        parameter = '%' + parameter + '%'
-        query = f'SELECT * FROM {table_name} WHERE {field} LIKE ? LIMIT 5'
-    else:
-        query = f'SELECT * FROM {table_name} WHERE {field} = ?'
+    query = f'SELECT * FROM {table_name} WHERE {field} = ?'
         
     cur.execute(query, (parameter,)) 
     records = cur.fetchall()
