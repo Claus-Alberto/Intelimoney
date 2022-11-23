@@ -12,53 +12,52 @@ const ConversionForm = () => {
         const [data, setData] = useState([{}])
 
                 useEffect(() => {
-                    fetch("/coinsHistory").then(
+                    fetch("/coinsHistory/"+ destinyCoin).then(
                         res => res.json()
                     ).then(
                         data => { 
-                        if(destinyCoin === 'BRL')
-                        setData(data.BRL)
-                        else if (destinyCoin === 'USD')
-                        setData(data.USD)
+                        setData(data)
+                        console.log(destinyCoin)
+                        console.log(data)
                     }
                     )
                 }, [destinyCoin])
-
-
+                
         const [userData, setUserData] = useState({
 
-            labels: data.map(function(index){return index.mes}),
+            labels: data.map(function(index){return index.data}),
             datasets: 
             [{
-                label: "Capital " + destinyCoin,
-                data: data.map(function(index){return index.capital}),
+                label: "Cotação " + destinyCoin,
+                data: data.map(function(index){return index.avg}),
                 backgroundColor: "#FFF",
                 borderRadius: 9,
                 barPercentage: 0.5,
                 borderWidth: 1,
-                display: false,    
+                display: true,    
             }]
         });
 
         useEffect(() => {
             setUserData
             ({
-                labels: data.map(function(index){return index.mes}),
+                labels: data.map(function(index){return index.data}),
                 datasets: 
                 [{
-                    label: "Capital " + destinyCoin,
-                    data: data.map(function(index){return index.capital}),
+                    label: "Cotação " + destinyCoin,
+                    data: data.map(function(index){return index.avg}),
                     backgroundColor: "#FFF",
                     borderRadius: 9,
                     barPercentage: 0.5,
                     borderWidth: 1,
-                    display: false,    
+                    display: true,    
                 }],
             })
         }, [destinyCoin])
         
         const conversionCalculate = (event) => {
             event.preventDefault();
+
 
             var tipoMoedaBase, tipoMoedaSecundaria, valorMoedaBase, valorInversoMoedaSecundaria, valorInicial,
              moedaBase, moedaSecundaria, resultado;
