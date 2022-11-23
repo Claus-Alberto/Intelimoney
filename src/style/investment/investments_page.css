@@ -1,0 +1,112 @@
+.investment{
+    display: flex;
+    justify-content: center;
+    min-height: calc(100vh - 155px);
+}
+
+.investment_container{
+    display: flex;
+    flex-direction: column;
+    max-width: var(--container_width);
+    width: 100%;
+    gap: 30px;
+    align-items: center;
+    padding: 50px 0;
+}
+
+.investment_form{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+
+.search_div{
+    width: 50%;
+    display: flex;
+    background-color: var(--dark_gray);
+    padding: 14px 28px;
+    border-radius: 100px;
+    color: var(--white);
+    align-items: center;
+}
+
+.search_input{
+    all: unset;
+    width: 100%;
+    padding: 0 7px;
+}
+
+.search_submit{
+    all: unset;
+    background-image: url('../../static/search.svg');
+    background-color: var(--dark_gray);
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
+
+.search_filter{
+    display: none;
+}
+
+.actives{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.active{
+    width: var(--container_width);
+    display: flex;
+    background-color: var(--dark_gray);
+    border-radius: 20px;
+    color: var(--white);
+    justify-content: space-between;
+}
+
+.active_main_info {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    padding: 25px 0 25px 75px;
+    justify-content: center;
+}
+
+.active_main_info h3{
+    font-weight: bold;
+}
+
+.active_main_info_content{
+    display: flex;
+    gap: 30px;
+}
+
+.active_main_info_content div{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.active_main_info_content div p:nth-child(1){
+    font-size: 1rem;
+}
+
+.active_main_info_content div p:nth-child(2){
+    text-transform: capitalize;
+}
+
+.active_values_info{
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--black);
+    width: 35%;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    justify-content: center;
+}

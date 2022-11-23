@@ -1,0 +1,118 @@
+.retirement{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.retirement_container{
+    border-radius: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--black);
+    padding: 20px;
+    color: var(--white);
+    gap: 20px;
+    font-family: 'Josefin Slab', serif;
+}
+
+.retirement_container h2{
+    color: var(--white);
+}
+
+.retirement_content{
+    display: flex;
+    max-width: var(--container_width);
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.retirement_content form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    min-width: 60%;
+    gap: 20px;
+}
+
+.retirement_content form .retirement_questions{
+    display: flex;
+    gap: 20px;
+}
+
+.retirement_content form input[type="submit"]{
+    all: unset;
+    background-color: var(--white);
+    color: var(--black);
+    text-align: center;
+    padding: 8px;
+    border-radius: 60px;
+    font-size: 1.7rem;
+    border: 2px solid var(--white);
+    cursor: pointer;
+}
+
+.retirement_content form input[type="submit"]:hover{
+    background-color: var(--transparent);
+    color: var(--white);
+}
+
+.retirement_questions_div{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 8px;
+}
+
+.retirement_questions_div label{
+    font-size: 1.3rem;
+}
+
+.retirement_questions_div input[type="number"]{
+    all: unset;
+    background-color: var(--dark_gray);
+    padding: 7px;
+    border-radius: 4px;
+}
+
+.retirement_questions_div input[type=number]::-webkit-inner-spin-button,
+.retirement_questions_div input[type=number]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+}
+
+.retirement_checkboxes{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.retirement_checkboxes input[type=checkbox]{
+    transform: scale(2);
+}
+
+
+.retirement_checkboxes_item{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.retirement_result{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--dark_gray);
+    padding: 15px;
+    border-radius: 10px;
+    gap: 10px;
+}
+
+.retirement_result p:nth-child(2), .retirement_result p:nth-child(4){
+    font-size: 2.5rem;
+}
