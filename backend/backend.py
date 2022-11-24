@@ -65,7 +65,7 @@ def calculateSimulations():
 
 
 @app.route("/coinsHistory/<moeda>")
-def create_historicalcurrencie(moeda):
+def createHistoricalCurrencie(moeda):
     moedaE = None
     match moeda:
         case 'USD':
@@ -89,9 +89,11 @@ def create_historicalcurrencie(moeda):
         case _:
             print('default')
         
-    df = dataAccess.get_table('HISTORICAL_CURRENCIES', "name", moedaE)
+    df = dataAccess.getTable('HISTORICAL_CURRENCIES', "name", moedaE)
     df = df.groupby('data').agg({'avg':'mean'})
     df= df.reset_index()
     return df.to_json(orient='records')
     
-app.run(debug=True)
+    
+if __name__ == '__main__':
+    app.run(debug=True)

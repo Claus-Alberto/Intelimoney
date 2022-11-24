@@ -8,41 +8,41 @@ path = os.getcwd() + '/backend/database/ArquivosBanco/'
 
 #VERIFICA SE A TABELA EXISTE, SENAO EXISTIR INSERE NO BANCO
 #RECEBE O NOME DA TABELA E CHAVE DA API
-def manage_db(table_name, currentKey):
-    if check_if_table_exist(table_name):
+def manageDB(table_name, currentKey):
+    if checkIfTableExists(table_name):
         return
     
     if table_name == 'TITLES':
-        insert_titles()
+        insertTitles()
     elif table_name == 'EXPECTATIVA_VIDA':
-        insert_life_expectancy()
+        insertLifeExpectancy()
     else:
-        check_currencie(currentKey)
+        checkCurrencie(currentKey)
 
 #INSERE O JSON COM AS EXPECTATIVAS DE VIDA NO BANCO
-def insert_life_expectancy():
+def insertLifeExpectancy():
     table_name = 'EXPECTATIVA_VIDA'
     
     life_expec = pd.read_json(path + 'life_expectancy.json')
     life_expec = life_expec.dropna()
-    query = get_query(table_name)
+    query = getQuery(table_name)
 
-    insert_data(life_expec, table_name, query)
+    insertData(life_expec, table_name, query)
     
     
 #INSERE O CSV COM OS TITULOS E OS SIMBOLOS NO BANCO
-def insert_titles():
+def insertTitles():
     table_name = 'TITLES'
     
     titles = pd.read_csv(path + 'titulos.csv')
-    query = get_query(table_name)
+    query = getQuery(table_name)
 
-    insert_data(titles, table_name, query)
+    insertData(titles, table_name, query)
 
 
 #ABRE A CONEXAO INSERE O DATAFRAME E FECHA A CONEXAO, 
 #RECEBE O DATAFRAME, O NOME DA TABELA, E UMA QUERY PARA CRIAR O BANCO CASO NAO EXISTA
-def insert_data(df, table_name, query):
+def insertData(df, table_name, query):
     if table_name == 'HISTORICAL_CURRENCIES':
         insert = 'append'
     else:
@@ -57,7 +57,7 @@ def insert_data(df, table_name, query):
 
 #STRING PARA CRIAR A TABELA NO BANCO
 #RECEBE O NOME DA TABELA
-def get_query(table_name):
+def getQuery(table_name):
     if table_name == 'HISTORICAL_CURRENCIES':
         return f'CREATE TABLE IF NOT EXISTS {table_name} (name TEXT, first REAL, last REAL, max REAL, min REAL, avg REAL, data TEXT)'
     elif table_name == 'EXPECTATIVA_VIDA':
@@ -68,7 +68,7 @@ def get_query(table_name):
 
 #CONFERE SE A TABELA EXISTE NO BANCO E RETORNA UM BOOLEAN
 #RECEBE O NOME DA TABELA
-def check_if_table_exist(table_name):
+def checkIfTableExists(table_name):
     conn = sqlite3.connect('teste.db')
     cur = conn.cursor()
     
@@ -83,7 +83,7 @@ def check_if_table_exist(table_name):
 
 #VERIFICA SE UM VALOR EXISTE NA TABELA E RETORNA UMA LISTA COM OS VALORES
 #RECEBE O NOME DA TABELA, A COLUNA PROCURADA, O VALOR PROCURADO
-def select_condition_table(table_name, field, parameter, return_bool=False):
+def selectConditionTable(table_name, field, parameter, return_bool=False):
     
     conn = sqlite3.connect('teste.db')
     cur = conn.cursor()
@@ -114,30 +114,30 @@ def select_condition_table(table_name, field, parameter, return_bool=False):
 #VERIFICA SE A TABELA DE HISTORICO DE MOEDAS EXISTE, CASO NAO CRIA A TABELA E INSERE OS DADOS
 #CASO EXISTA VERIFICA SE POSSUI A DATA DE ONTEM, CASO NAO INSERE NA TABELA
 #RECEBE A CHAVE DA API
-def check_currencie(currentKey):
+def checkCurrencie(currentKey):
     from datetime import datetime, timedelta
     
     table_name = 'HISTORICAL_CURRENCIES'
 
     #VERIFICA SE A TABELA EXISTE
-    if check_if_table_exist(table_name):
-        df = build_data(currentKey, table_name, '1')
+    if checkIfTableExists(table_name):
+        df = buildData(currentKey, table_name, '1')
         dia = datetime.strftime(datetime.now() - timedelta(1), '%d-%m-%Y')
 
         #VERIFICA SE EXISTEM DADOS COM A DATA DE ONTEM
-        if select_condition_table(table_name, 'data', dia):
+        if selectConditionTable(table_name, 'data', dia):
             return
         else:
-            query = get_query(table_name)
-            insert_data(df,table_name, query)
+            query = getQuery(table_name)
+            insertData(df,table_name, query)
             return
     else: 
-        build_data(currentKey, table_name, '20')
+        buildData(currentKey, table_name, '20')
 
 
 #LE O JSON RECEBIDO E ADICIONA UMA COLUNA COM A DATA, DEVOLVE O DATAFRAME DA REQUISICAO 
 #RECEBE A KEY DA API, O NOME DA TABELA, QUANTOS DIAS ATRAS IRA PUXAR
-def build_data(currentKey, table_name, days):
+def buildData(currentKey, table_name, days):
     reqUrl = f'https://api.hgbrasil.com/finance/historical?format=json-cors&array_limit=1&fields=only_results,currencies&key={currentKey}&days_ago={days}&mode=currencies'    
         
     data = pd.read_json(reqUrl)
@@ -147,15 +147,15 @@ def build_data(currentKey, table_name, days):
         df['data'] = dia
         
         if days == '20':
-            query = get_query(table_name)
-            insert_data(df,table_name, query)
+            query = getQuery(table_name)
+            insertData(df,table_name, query)
         else:
             return df
 
 
 #DEVOLVE LISTA DE VALORES DA TABELA
 #RECEBE NOME DA TABELA
-def select_table(table_name):
+def selectTable(table_name):
     conn = sqlite3.connect('teste.db')
     cur = conn.cursor()
     query = f'SELECT * FROM {table_name}'
