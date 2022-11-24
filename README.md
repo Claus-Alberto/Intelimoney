@@ -10,6 +10,10 @@
 
 5 - Rode o programa RunApp.py localizado na pasta raiz do programa
 
+## Requisitos:
+
+Computador com Windows 10 ou superior
+
 ## Dependências do Node:
 
 npm install history react-router-dom@6.0.0-beta.0
